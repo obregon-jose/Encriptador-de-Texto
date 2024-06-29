@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link type="image/png" sizes="32x32" rel="icon" href="assets/images/icons8-lock-32.png">
+</head>
+<body>
+    <header>
+        <h1 class="header">Encriptar y Desencriptar Texto</h1>
+    </header>
+    <main>
+        <!-- <div  id="exchange" class="exchange">
+            <img onclick="exchangeText()" width="32" height="32" src="https://img.icons8.com/ios-filled/50/data-in-both-directions.png" alt="data-in-both-directions"/>
+        </div> -->
+        <div class="container">
+            <div class="section-container">
+                <div class="text-container">
+                  <h3 class="information">Challenge #1: Oracle & Alura Latam</h3>
+                  <textarea id="texto" class="text" placeholder="Ingrese el texto que desea Encriptar/Desencriptar aquí"></textarea>
+                  <div>
+                    <div class="note-container">
+                        <img width="16" height="16" src="https://img.icons8.com/color/48/box-important.png" alt="box-important"/>   
+                        <span id="alerta">Solo letras minúsculas y sin acentos</span>
+                    </div>
+                    <div class="button-container">
+                      <button id="encryptButton" class="button" onclick="encrypt()">Encriptar</button>
+                      <button id="decryptButton" class="button" onclick="decrypt()">Desencriptar</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+    
+            <div class="result-container">
+                <div id="notResult" class="not-result">
+                    <img src="https://img.freepik.com/vector-premium/archivo-no-encontrado-ilustracion-personas-confundidas-sosteniendo-gran-lupa-buscar-resultados_258153-336.jpg?w=240" alt="not-found">
+                    <div class="message">
+                        <h3 id="messageTittle">No hay mensajes para mostrar en este momento</h3>
+                        <p>Ingrese el texto a encriptar o desencriptar en el campo</p>
+                     </div>
+                </div>
+
+                <div id="result" class="result">
+                  <h2 class="result-title">Resultado</h2>
+                  <textarea id="resultText" class="result-text" readonly></textarea>
+                  <button id="copyButton" class="button copy-button" onclick="copyText()">Copiar Texto</button>
+                </div>
+
+                <div id="loadingScreen" class="loadingScreen">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3 class="footer">Desarrollado por José Obregón</h3>
+    </footer>
+    
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
