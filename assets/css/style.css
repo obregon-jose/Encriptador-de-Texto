@@ -121,6 +121,13 @@ body {
     top: 288px;
     right: 286px; 
 }
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* .exchange {
     width: 3.5em;
     height: 3.5em;
@@ -144,11 +151,27 @@ body {
     cursor: pointer;     
 } */
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.clear {
+    width: 3.5em;
+    height: 3.5em;
+    position: fixed;
+    top: 400px;
+    right: 550px;
+    cursor: pointer;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: none;
+    background-image: url('/assets/images/escoba.png'); 
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
 }
+.clear:hover {
+    top: 393px;
+    right: 558px;
+    background-image: url('/assets/images/escoba.gif'); /* Establece la nueva imagen */
+    background-size: cover;
+}     
 
 .result {
     align-items: center;

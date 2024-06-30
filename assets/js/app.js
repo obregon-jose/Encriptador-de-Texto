@@ -1,25 +1,34 @@
 let result = null;
 let notResult = null;
-let texto = null;
+let textInput = null;
 let resultado = null;
 let loadingScreen = null;
 let textoCifrado = null;
-let exchange = null;
+let clear = null;
+// let exchange = null;
+
+function asignarTextoElemento(elemento, texto){
+    let elementoHTML = document.getElementById(elemento);
+    elementoHTML.innerHTML = texto;
+}
 
 function app(){
     result = document.getElementById('result');
     notResult = document.getElementById('notResult');
-    texto = document.getElementById("texto").value;
+    textInput = document.getElementById("texto").value;
     resultado = document.getElementById("resultText");
     loadingScreen = document.getElementById("loadingScreen");
+    clear = document.getElementById("clear");
+
     loadingScreen.style.display = "block";
-    exchange = document.getElementById("exchange");
+    
+    // exchange = document.getElementById("exchange");
 }
 
 function encrypt() {
     app();
 
-    textoCifrado = texto
+    textoCifrado = textInput
     .replace(/e/gi, "enter")
     .replace(/i/gi, "imes")
     .replace(/a/gi, "ai")
@@ -32,7 +41,7 @@ function encrypt() {
 function decrypt(){
     app();
     
-    textoCifrado = texto
+    textoCifrado = textInput
     .replace(/ai/gi, "a")
     .replace(/enter/gi, "e")
     .replace(/imes/gi, "i")
@@ -41,29 +50,43 @@ function decrypt(){
     
     processText();
 }
+
 function processText(){
     setTimeout(function() {
         loadingScreen.style.display = "none";
-        if (texto.length != 0) {
+        if (textInput.length != 0) {
             showResult();
         } else {
             emptyText();
         }
     }, 1000);
 }
-function showResult(){
+
+function showResult(){// exchange.style.display = "block";
     resultado.innerHTML = textoCifrado;
     notResult.style.display = "none"
     result.style.display = "block";
-    // exchange.style.display = "block";
+    clear.style.display = "block";
+    
 }
 
-function emptyText(){
+function emptyText(){// exchange.style.display = "none";
     notResult.style.display = "block";
     result.style.display = "none";
-    // exchange.style.display = "none";
+    clear.style.display = "none";
+    
 }
 
+function clearText(){// exchange.style.display = "none";
+    var textInput = document.getElementById("texto"); 
+    textInput.value = ""; 
+    emptyText();
+    textInput.focus();
+
+    let elemento = document.getElementById('alerta');
+    elemento.style.color = 'initial';
+    asignarTextoElemento('messageT', 'No hay mensajes para mostrar en este momento');
+}
 function copyText(){
     resultado.select();
 	resultado.setSelectionRange(0, 99999);
@@ -71,14 +94,32 @@ function copyText(){
 }
 
 // function exchangeText(){
-//     texto = document.getElementById("texto").value;
+//     textInput = document.getElementById("texto").value;
 //     resultado = document.getElementById("resultText").value;
-//     let aux = texto; 
-//     texto.innerHTML = resultado;
+//     let aux = textInput; 
+//     textInput.innerHTML = resultado;
 //     resultado.innerHTML = aux;
-//     // textoCifrado = texto;
+//     // textoCifrado = textInput;
 // }
 
-function validateTexto(text){
+document.addEventListener('DOMContentLoaded', function() {
+    const textInput = document.getElementById('texto');
+    textInput.addEventListener('input', function() {
+        const regex = (/^([a-z-!\s]+)$/g);
+        const currentValue = textInput.value;
 
-}
+        let elemento = document.getElementById('alerta');
+    
+        if (regex.test(currentValue)) {
+            elemento.style.color = 'initial';
+            asignarTextoElemento('messageT', 'No hay mensajes para mostrar en este momento');
+        } else {
+            textInput.value = currentValue.slice(0, -1);
+            asignarTextoElemento('messageT', 'Solo se permiten letras minúsculas y sin acentos');
+            elemento.style.color = 'red';
+            
+        }
+    });
+});
+
+
