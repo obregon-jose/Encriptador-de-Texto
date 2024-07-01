@@ -22,4 +22,4 @@ Este es un programa que te permite encriptar y desencriptar texto utilizando un 
 Ejemplo:
 Encriptar: "gato" => "gaitober"
 Desencriptar: "gaitober" => "gato"
-```
+<!-- ``` -->

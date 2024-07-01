@@ -5,7 +5,6 @@ let resultado = null;
 let loadingScreen = null;
 let textoCifrado = null;
 let clear = null;
-// let exchange = null;
 
 function asignarTextoElemento(elemento, texto){
     let elementoHTML = document.getElementById(elemento);
@@ -21,12 +20,11 @@ function app(){
     clear = document.getElementById("clear");
 
     loadingScreen.style.display = "block";
-    
-    // exchange = document.getElementById("exchange");
 }
 
 function encrypt() {
     app();
+    asignarTextoElemento('result-title', 'Texto cifrado');
 
     textoCifrado = textInput
     .replace(/e/gi, "enter")
@@ -40,6 +38,7 @@ function encrypt() {
 
 function decrypt(){
     app();
+    asignarTextoElemento('result-title', 'Texto descifrado');
     
     textoCifrado = textInput
     .replace(/ai/gi, "a")
@@ -62,22 +61,20 @@ function processText(){
     }, 1000);
 }
 
-function showResult(){// exchange.style.display = "block";
+function showResult(){
     resultado.innerHTML = textoCifrado;
     notResult.style.display = "none"
     result.style.display = "block";
     clear.style.display = "block";
-    
 }
 
-function emptyText(){// exchange.style.display = "none";
+function emptyText(){
     notResult.style.display = "block";
     result.style.display = "none";
     clear.style.display = "none";
-    
 }
 
-function clearText(){// exchange.style.display = "none";
+function clearText(){
     var textInput = document.getElementById("texto"); 
     textInput.value = ""; 
     emptyText();
@@ -92,15 +89,6 @@ function copyText(){
 	resultado.setSelectionRange(0, 99999);
 	navigator.clipboard.writeText(resultado.value);
 }
-
-// function exchangeText(){
-//     textInput = document.getElementById("texto").value;
-//     resultado = document.getElementById("resultText").value;
-//     let aux = textInput; 
-//     textInput.innerHTML = resultado;
-//     resultado.innerHTML = aux;
-//     // textoCifrado = textInput;
-// }
 
 document.addEventListener('DOMContentLoaded', function() {
     const textInput = document.getElementById('texto');
@@ -121,5 +109,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
