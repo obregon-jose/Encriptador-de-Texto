@@ -33,7 +33,8 @@ function encrypt() {
     .replace(/o/gi, "ober")
     .replace(/u/gi, "ufat");
     
-    processText(); 
+    processText();
+    
 }
 
 function decrypt(){

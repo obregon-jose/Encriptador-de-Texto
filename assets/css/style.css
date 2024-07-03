@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +13,12 @@ body {
     background: #F3F5FC;
     min-height: 100vh;
     padding: 0% 8%;
+    
+}
+
+html, body {
+    height: 100%;
+    /* font-family: 'Inter', sans-serif; */
 }
 
 .header h1{
@@ -100,15 +108,16 @@ body {
     border-radius: 10px;
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
 }
+
 .not-result img{
     height: auto; 
-    max-height: 250px; 
+    max-height: 100%; 
     width: auto; 
     max-width: 100%; 
     margin-top: 30px;
     display: block; 
 }
-/* */
+
 .message {
     font-size: 20px;
     color: #0A3871;
@@ -118,6 +127,7 @@ body {
     gap: 20px;
     padding: 0 10px;
 } 
+
 .result {
     align-items: center;
     gap: 10px;
@@ -136,6 +146,7 @@ body {
     font-weight: bold;
     text-align: center;
 }
+
 .result-text {
     height: 80%;
     border: none;
@@ -155,8 +166,113 @@ body {
     width: 70%;
 }
 
+.loadingScreen {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    display: none;
+}
+
+.loader {
+    width: 5.4em;
+    height: 5.4em;
+    border: 0.3em solid rgb(255, 255, 255);
+    border-left-color: #0A3871;
+    border-radius: 100%;
+    animation: spin 0.5s linear infinite;
+    position: fixed;
+    top: 288px;
+    right: 286px; 
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .footer h3{
     padding: 5px;
     font-size: 18px;
     text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .section-container, .result-container {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .button {
+        width: 50%;
+        font-family: 'Inter';
+    }
+
+    .not-result img {
+        display: none;
+    }
+    
+    .text {
+        min-height: calc(30vh - 10px);
+        
+    }
+
+    .result {
+        height: calc(30vh - 10px);
+    }
+    .result-text {
+        height: 70%;
+    }
+    
+    .loader {
+        top: 25%;
+        right: 40%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: calc(4vw + 1rem);
+    }
+
+    .information, .message, .result-title {
+        font-size: 18px;
+    }
+
+    .button {
+        font-family: 'Inter';
+        width: 60%;
+        font-size: calc(2vw + 0.8rem);
+    }
+
+    .button-container {
+        gap: 10px;
+    }
+
+    .not-result img {
+        display: none;
+    }
+
+    .text {
+        min-height: calc(20vh - 10px);
+        
+    }
+
+    .result {
+        height: calc(30vh - 10px);
+    }
+    .result-text {
+        height: 70%;
+    }
+
+    .loader {
+        top: 25%;
+        right: 40%; 
+    }
 }
