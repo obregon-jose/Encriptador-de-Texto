@@ -1,6 +1,13 @@
 # Encriptar y Desencriptar Texto
-
-### Desarrollado por José Obregón durante el Challenge del curso de Oracle y Alura Latam
+#### Desarrollado por José Obregón durante el Challenge del curso de Oracle y Alura Latam
+<div align="center">
+  <img src="assets/images/image.png" alt="encryp-decrypt-text" />
+</div>
+<div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-5A5A5A?logo=javascript&logoColor=yelllow" />
+  <img src="https://img.shields.io/badge/HTML-5A5A5A?logo=html5" />
+  <img src="https://img.shields.io/badge/CSS-5A5A5A?logo=css3&logoColor=01A3D8" />
+</div>
 
 ## Descripción
 Este es un programa que te permite encriptar y desencriptar texto utilizando un algoritmo de sustitución. Aunque es fácil de usar, se recomienda utilizarlo solo con fines prácticos, ya que el algoritmo de sustitución es relativamente simple y puede ser descifrado con facilidad. Por lo tanto, no se recomienda su uso en casos donde se requiera un nivel de seguridad más alto.
